@@ -16,6 +16,7 @@
 
 .product-gallery img {
     max-height: 500px;
+    width: 100%;
     object-fit: contain;
 }
 
@@ -73,6 +74,7 @@
     padding: 0.75rem 0;
     border-bottom: 1px solid #f0f0f0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -98,6 +100,7 @@
     border: none;
     width: 100%;
     text-align: center;
+    cursor: pointer;
 }
 
 .btn-buy:hover {
@@ -105,6 +108,93 @@
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(13,110,253,0.3);
+}
+
+/* Responsividade Página de Produto */
+@media (max-width: 992px) {
+    .product-page {
+        padding: 2rem 0;
+    }
+    
+    .product-title {
+        font-size: 2rem;
+    }
+    
+    .product-price-large {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-page {
+        padding: 1rem 0;
+    }
+    
+    .product-gallery {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .product-gallery img {
+        max-height: 300px;
+    }
+    
+    .product-details {
+        padding: 0;
+    }
+    
+    .product-title {
+        font-size: 1.5rem;
+    }
+    
+    .product-price-large {
+        font-size: 1.5rem;
+    }
+    
+    .product-description {
+        font-size: 0.95rem;
+    }
+    
+    .specs-title {
+        font-size: 1.1rem;
+    }
+    
+    .specs-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .specs-list li strong {
+        min-width: auto;
+    }
+    
+    .btn-buy {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-gallery {
+        padding: 0.5rem;
+    }
+    
+    .product-gallery img {
+        max-height: 250px;
+    }
+    
+    .product-title {
+        font-size: 1.3rem;
+    }
+    
+    .product-price-large {
+        font-size: 1.3rem;
+    }
+    
+    .product-description {
+        font-size: 0.9rem;
+    }
 }
 
 /* Seção de Vídeo */
@@ -131,4 +221,30 @@
     width: 100%;
     height: 100%;
     border: none;
+}
+
+/* Responsividade Vídeo */
+@media (max-width: 768px) {
+    .video-section {
+        margin-top: 2rem;
+        padding-top: 1rem;
+    }
+    
+    .video-container {
+        border-radius: 12px;
+    }
+}
+
+/* Melhorias para dispositivos touch */
+@media (hover: none) and (pointer: coarse) {
+    .btn-buy:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Previne zoom em inputs no mobile */
+@media (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
 }
